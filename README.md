@@ -8,14 +8,14 @@ In this repository, we implement *Discrepancy-based graph Self-supervised LeArni
     <img width="750" src="assets/model_overview.jpg"/>
 </p>
 
----
+
 ## Contribution
 
 * We propose a novel graph self-supervised learning framework with a completely opposite objective from contrastive learning, which aims to learn to differentiate a graph and its perturbed ones using a discriminator, as even slight perturbations could lead to completely different properties for graphs. 
 * Utilizing the graph edit distance that is obtained for perturbed graphs at no cost, we propose a novel objective to preserve the exact amount of discrepancy between graphs in the representation space.
 * We validate our D-SLA by pre-training and fine-tuning it on various benchmarks of chemical, biology, and social domains, on which it significantly outperforms baselines.
 
----
+
 ## Dependencies
 ```
 python 3.8 
@@ -28,7 +28,7 @@ torch-spline-conv 1.2.1
 rdkit 2022.03.5
 ```
 
----
+
 ## Dataset
 ### 1. Molecular graph dataset
 To download the molecular graph dataset, run commands below
@@ -47,7 +47,7 @@ wget http://snap.stanford.edu/gnn-pretrain/data/bio_dataset.zip
 unzip bio_dataset.zip -d transferLearning_MoleculeNet_PPI/bio/
 ```
 
----
+
 ## Pre-training
 
 ### 1. Molecular graph dataset
@@ -84,7 +84,7 @@ For example,
 python pretrain_DSLA.py --dataset COLLAB --edge_pert_strength 0.001 --edit_learn
 ```
 
----
+
 ## Fine-tuning
 
 ### 1. Molecular graph dataset - Molecular property prediction
@@ -128,7 +128,7 @@ For example,
 python finetune_edgepred.py --dataset COLLAB --model_file ckpts/COLLAB/DSLA/100.pth --seed 0
 ```
 
----
+
 ## Citation
 ```
 @article{kim2022dsla,
